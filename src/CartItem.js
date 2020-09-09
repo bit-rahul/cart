@@ -58,7 +58,7 @@ export default class CartItem extends Component {
                 </div>
                 <div className="right-block">
                     <div style={{ fontSize: 25 }}>{title}</div>
-                    <div style={{ color: "#777" }}>{price}</div>
+                    <div style={{ color: "#777" }}>Rs {price}</div>
                     <div style={{ color: "#777" }}>Qty: {qty}</div>
                     <div className="cart-item-actions">
                         {/* Buttons */}
