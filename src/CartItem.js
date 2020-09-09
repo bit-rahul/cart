@@ -9,10 +9,44 @@ export default class CartItem extends Component {
             qty: 1,
             img: ''
         }
+        // this.testing();
     }
 
+    // testing() {
+    //     const promise = new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             resolve('done');
+    //         }, 5000);
+    //     })
+
+    //     promise.then(() => {
+    //         this.setState({ qty: this.state.qty + 100 })
+    //         this.setState({ qty: this.state.qty + 100 })
+    //         this.setState({ qty: this.state.qty + 100 })
+
+    //         console.log('state', this.state);
+    //     })
+    // }
+
     increaseQuantity = () => {
-        console.log("test", this.state)
+        // let { qty } = this.state;
+        // this.setState({
+        //     qty: qty + 1
+        // })
+        this.setState((prevState) => {
+            return {
+                qty: prevState.qty + 1
+            }
+        })
+    }
+
+    decreaseQuantity = () => {
+        // let { qty } = this.state;
+        this.setState((prevState) => {
+            return {
+                qty: prevState.qty === 0 ? 0 : prevState.qty - 1
+            }
+        })
     }
 
     render() {
@@ -38,6 +72,7 @@ export default class CartItem extends Component {
                             alt="decrease"
                             className="action-icons"
                             src="https://image.flaticon.com/icons/svg/659/659892.svg"
+                            onClick={this.decreaseQuantity}
                         />
                         <img
                             alt="delete" className="action-icons"
