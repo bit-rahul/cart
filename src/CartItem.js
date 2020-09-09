@@ -1,16 +1,6 @@
 import React, { Component } from 'react'
 
 export default class CartItem extends Component {
-    constructor() {
-        super();
-        this.state = {
-            price: 999,
-            title: 'Mobile Phone',
-            qty: 1,
-            img: ''
-        }
-        // this.testing();
-    }
 
     // testing() {
     //     const promise = new Promise((resolve, reject) => {
@@ -50,7 +40,7 @@ export default class CartItem extends Component {
     }
 
     render() {
-        const { price, title, qty } = this.state;
+        const { price, title, qty } = this.props.product;
         return (
             <div className="cart-item">
                 <div className="left-block">
