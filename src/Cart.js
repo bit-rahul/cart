@@ -8,7 +8,7 @@ export default class Cart extends Component {
             products: [
                 {
                     price: 99,
-                    title: 'Mobile Phone',
+                    title: 'Watch',
                     qty: 1,
                     img: '',
                     id: 1
@@ -32,6 +32,24 @@ export default class Cart extends Component {
         // this.testing();
     }
 
+    handleQty = (product, val) => {
+        const { products } = this.state;
+        const index = products.indexOf(product);
+        if (val === "inc")
+            products[index].qty += 1;
+        else if (val === "dec")
+            products[index].qty = products[index].qty < 1 ? 0 : products[index].qty - 1;
+        this.setState({ products });
+    }
+
+    handleDeleteProduct = (id) => {
+        const { products } = this.state;
+        const items = products.filter((item) => item.id !== id);
+        this.setState({
+            products: items
+        })
+    }
+
     render() {
         const { products } = this.state;
         return (
@@ -42,6 +60,9 @@ export default class Cart extends Component {
                             <CartItem
                                 product={product}
                                 key={product.id}
+                                handleIncreaseQty={this.handleQty}
+                                handleDecreaseQty={this.handleQty}
+                                handleDeleteProduct={this.handleDeleteProduct}
                             />
                         )
                     })

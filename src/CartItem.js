@@ -18,18 +18,19 @@ export default class CartItem extends Component {
                             alt="increase"
                             className="action-icons"
                             src="https://image.flaticon.com/icons/svg/992/992651.svg"
-                            onClick={this.increaseQuantity}
+                            onClick={() => this.props.handleIncreaseQty(this.props.product, "inc")}
                         />
                         <img
                             alt="decrease"
                             className="action-icons"
                             src="https://image.flaticon.com/icons/svg/659/659892.svg"
-                            onClick={this.decreaseQuantity}
+                            onClick={() => this.props.handleDecreaseQty(this.props.product, "dec")}
                         />
                         <img
                             alt="delete" className="action-icons"
                             src="https://image.flaticon.com/icons/svg/1214/1214428.svg"
-                        />
+                            onClick={() => this.props.handleDeleteProduct(this.props.product.id)}
+                                                    />
                     </div>
                 </div>
             </div>
