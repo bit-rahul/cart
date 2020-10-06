@@ -30,7 +30,7 @@ export default class CartItem extends Component {
                             alt="delete" className="action-icons"
                             src="https://image.flaticon.com/icons/svg/1214/1214428.svg"
                             onClick={() => this.props.handleDeleteProduct(this.props.product.id)}
-                                                    />
+                        />
                     </div>
                 </div>
             </div>
